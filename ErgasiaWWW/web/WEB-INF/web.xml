@@ -10,7 +10,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>JavaServlet</servlet-name>
-        <url-pattern>/JavaServlet.do</url-pattern>
+        <url-pattern>/Game.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>FormServlet</servlet-name>

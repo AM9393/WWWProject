@@ -12,6 +12,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Welcome !</h1>
+        <h1>Wrong Answer</h1>
+        
+        <p> Please consult this <br> <a href="https://en.wikipedia.org/wiki/JavaServer_Pages" target="_blank">Learn what you did wrong</a>            </p>
+        <a href="result.jsp" target="_blank"><input type="submit" value="continue" name="button" /></a>
     </body>
 </html>

@@ -6,13 +6,13 @@
 package com.model;
 
 import com.uthldap.Uthldap;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 /**
@@ -21,10 +21,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class JavaServlet extends HttpServlet {
 
-    
-    
-    
-    
     
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -84,32 +80,33 @@ public class JavaServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-              
-
         
             String user = request.getParameter("user");
             String pass = request.getParameter("pass");
-            String option=request.getParameter("submit");
-       
-            
-          Uthldap ldap = new Uthldap(user,pass);
-
-          PrintWriter writer = response.getWriter();
+            String name=" ";
+                      
+            Uthldap ldap = new Uthldap(user,pass);
+            PrintWriter writer = response.getWriter();
          
 
 
   
 //writer.println("Eimai sto Servlet");
-if(ldap.auth()==true){
-            writer.println("<html><body>Welcome <b>" + user + "</b><br></body></html>");
-            writer.println("<html><body>Authenticated Your name is: " + ldap.getName() +"<br></body></html>");
+if(ldap.auth()){
+
+    request.setAttribute("name", ldap.getName());
+   
+    writer.println("<html><body>Welcome <b>" + user + "</b><br></body></html>");
+    writer.println("<html><body>Authenticated Your name is: " + ldap.getName() +"<br></body></html>");
             
-             //  RequestDispatcher view = request.getRequestDispatcher("result.jsp");
-             //  view.forward(request, response);
+               RequestDispatcher view = request.getRequestDispatcher("GameStarting.jsp");
+               view.forward(request, response);
         }
 
 else {
-     writer.println("<html><body>Authentication failed</body></html>");
+     writer.println("<html><body>Authentication failed <br> Please Try Again! </body></html>");
+     writer.println("<html><body><a href=\"index.jsp\">Return</a></body></html>");
+   //  response.sendRedirect("index.jsp"); 
 }
            
       

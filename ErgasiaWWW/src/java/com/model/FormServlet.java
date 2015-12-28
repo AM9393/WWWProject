@@ -5,7 +5,7 @@
  */
 package com.model;
 
-
+import com.uthldap.Uthldap;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -13,12 +13,15 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Themis
  */
 public class FormServlet extends HttpServlet {
+    private int score=0;
+   // private String Score_String;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -72,19 +75,54 @@ public class FormServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-     //   processRequest(request, response);
         
-     
-       String choice= request.getParameter("submit");
+       String Score_String = "";
+       String test="";
+       String choice= request.getParameter("Question1"); //H epilogi pou ekane o xristis gia tin 1h erwtisi
+       String choice2=request.getParameter("Question2");
+       String choice3=request.getParameter("Question3");
+       String choice4=request.getParameter("Question4");
+       String choice5=request.getParameter("Question5");
+               
+               
+               
        PrintWriter writer = response.getWriter();
-         
-      //writer.println("Your choice is");
+       HttpSession session=request.getSession(); //Start New Session
        
+      //writer.println("Your choice is \n" + choice);
+    //  writer.println(choice);
+      if ("Choice1".equals(choice)) {        //An i epilogi einai i 1i apantisi (pou einai kai i swsti) afksise to score
+          
+           score++;    
+        // writer.println("Your score is  " + score);
+        request.setAttribute("Score_String", Integer.toString(score));
+       // session.setAttribute("test",Integer.toString(score));
+          RequestDispatcher view = request.getRequestDispatcher("result.jsp");
+           view.forward(request, response);      
         
-    RequestDispatcher view = request.getRequestDispatcher("result.jsp");
-    view.forward(request, response);   
+   
+      }
+      else if("Choice3".equals(choice2)) { //An i epilogi einai i 1i apantisi (pou einai kai i swsti) afksise to score
+          score++;
+          request.setAttribute("Score_String", Integer.toString(score));
+          RequestDispatcher view = request.getRequestDispatcher("result2.jsp");
+          view.forward(request, response);         
+      }
+      
+      else {
+         request.setAttribute("Score_String",Integer.toString(score));
+           
+       writer.println("Wrong Choice");
+       writer.println("Your score is  "  + score);
+       
+          RequestDispatcher view = request.getRequestDispatcher("result.jsp");
+           view.forward(request, response);      
         
         
+      }
+        
+      
+
      
         
         
