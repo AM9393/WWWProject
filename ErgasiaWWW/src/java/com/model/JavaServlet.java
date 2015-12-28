@@ -6,13 +6,21 @@
 package com.model;
 
 import com.uthldap.Uthldap;
+<<<<<<< HEAD
 import java.io.*;
+=======
+import java.io.IOException;
+import java.io.PrintWriter;
+>>>>>>> parent of 5c799fb... 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+<<<<<<< HEAD
 import javax.servlet.http.HttpSession;
+=======
+>>>>>>> parent of 5c799fb... 
 
 
 /**
@@ -22,6 +30,13 @@ import javax.servlet.http.HttpSession;
 public class JavaServlet extends HttpServlet {
 
     
+<<<<<<< HEAD
+=======
+    
+    
+    
+    
+>>>>>>> parent of 5c799fb... 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -80,6 +95,7 @@ public class JavaServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+<<<<<<< HEAD
         
             String user = request.getParameter("user");
             String pass = request.getParameter("pass");
@@ -87,11 +103,25 @@ public class JavaServlet extends HttpServlet {
                       
             Uthldap ldap = new Uthldap(user,pass);
             PrintWriter writer = response.getWriter();
+=======
+              
+
+        
+            String user = request.getParameter("user");
+            String pass = request.getParameter("pass");
+            String option=request.getParameter("submit");
+       
+            
+          Uthldap ldap = new Uthldap(user,pass);
+
+          PrintWriter writer = response.getWriter();
+>>>>>>> parent of 5c799fb... 
          
 
 
   
 //writer.println("Eimai sto Servlet");
+<<<<<<< HEAD
 if(ldap.auth()){
 
     request.setAttribute("name", ldap.getName());
@@ -107,6 +137,18 @@ else {
      writer.println("<html><body>Authentication failed <br> Please Try Again! </body></html>");
      writer.println("<html><body><a href=\"index.jsp\">Return</a></body></html>");
    //  response.sendRedirect("index.jsp"); 
+=======
+if(ldap.auth()==true){
+            writer.println("<html><body>Welcome <b>" + user + "</b><br></body></html>");
+            writer.println("<html><body>Authenticated Your name is: " + ldap.getName() +"<br></body></html>");
+            
+             //  RequestDispatcher view = request.getRequestDispatcher("result.jsp");
+             //  view.forward(request, response);
+        }
+
+else {
+     writer.println("<html><body>Authentication failed</body></html>");
+>>>>>>> parent of 5c799fb... 
 }
            
       

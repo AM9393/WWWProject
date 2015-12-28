@@ -1,6 +1,6 @@
 <%-- 
-    Document   : newresult
-    Created on : 11 Δεκ 2015, 10:42:37 μμ
+    Document   : newjsp
+    Created on : 28 Δεκ 2015, 7:09:30 μμ
     Author     : Themis
 --%>
 
@@ -12,6 +12,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Welcome !</h1>
+        <h1>Question 3/5</h1>
+        <%= "Your score is " + " "  +  request.getAttribute("Score_String")     %>
+        
+        <a href="index.jsp">Return</a>
     </body>
 </html>

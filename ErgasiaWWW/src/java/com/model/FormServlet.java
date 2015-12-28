@@ -5,7 +5,11 @@
  */
 package com.model;
 
+<<<<<<< HEAD
 import com.uthldap.Uthldap;
+=======
+
+>>>>>>> parent of 5c799fb... 
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -13,15 +17,21 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+<<<<<<< HEAD
 import javax.servlet.http.HttpSession;
+=======
+>>>>>>> parent of 5c799fb... 
 
 /**
  *
  * @author Themis
  */
 public class FormServlet extends HttpServlet {
+<<<<<<< HEAD
     private int score=0;
    // private String Score_String;
+=======
+>>>>>>> parent of 5c799fb... 
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -75,6 +85,7 @@ public class FormServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+<<<<<<< HEAD
         
        String Score_String = "";
        String test="";
@@ -123,6 +134,21 @@ public class FormServlet extends HttpServlet {
         
       
 
+=======
+     //   processRequest(request, response);
+        
+     
+       String choice= request.getParameter("submit");
+       PrintWriter writer = response.getWriter();
+         
+      //writer.println("Your choice is");
+       
+        
+    RequestDispatcher view = request.getRequestDispatcher("result.jsp");
+    view.forward(request, response);   
+        
+        
+>>>>>>> parent of 5c799fb... 
      
         
         

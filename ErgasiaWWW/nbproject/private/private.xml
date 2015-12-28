@@ -5,7 +5,11 @@
             <url>src/java/com/model/JavaServlet.java</url>
             <bookmark id="1">
                 <name/>
-                <line>85</line>
+<<<<<<< HEAD
+                <line>84</line>
+=======
+                <line>90</line>
+>>>>>>> parent of 5c799fb... 
                 <key/>
             </bookmark>
         </file>
@@ -14,11 +18,18 @@
         <group>
             <file>file:/C:/Users/Themis/Desktop/WWWProject/ErgasiaWWW/web/META-INF/context.xml</file>
             <file>file:/C:/Users/Themis/Desktop/WWWProject/ErgasiaWWW/src/java/com/model/JavaServlet.java</file>
-            <file>file:/C:/Users/Themis/Desktop/WWWProject/ErgasiaWWW/src/java/com/uthldap/Uthldap.java</file>
             <file>file:/C:/Users/Themis/Desktop/WWWProject/ErgasiaWWW/src/java/com/model/FormServlet.java</file>
+<<<<<<< HEAD
+            <file>file:/C:/Users/Themis/Desktop/WWWProject/ErgasiaWWW/web/GameStarting.jsp</file>
             <file>file:/C:/Users/Themis/Desktop/WWWProject/ErgasiaWWW/web/result.jsp</file>
             <file>file:/C:/Users/Themis/Desktop/WWWProject/ErgasiaWWW/web/newresult.jsp</file>
             <file>file:/C:/Users/Themis/Desktop/WWWProject/ErgasiaWWW/web/index.jsp</file>
+            <file>file:/C:/Users/Themis/Desktop/WWWProject/ErgasiaWWW/web/result2.jsp</file>
+=======
+            <file>file:/C:/Users/Themis/Desktop/WWWProject/ErgasiaWWW/web/result.jsp</file>
+            <file>file:/C:/Users/Themis/Desktop/WWWProject/ErgasiaWWW/web/newresult.jsp</file>
+            <file>file:/C:/Users/Themis/Desktop/WWWProject/ErgasiaWWW/web/index.jsp</file>
+>>>>>>> parent of 5c799fb... 
             <file>file:/C:/Users/Themis/Desktop/WWWProject/ErgasiaWWW/web/WEB-INF/web.xml</file>
         </group>
     </open-files>
