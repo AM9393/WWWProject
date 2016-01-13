@@ -1,0 +1,72 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12 Ιαν 2016, 2:54:38 πμ
+    Author     : Themis
+*/
+
+body {
+    //margin
+  //padding-top: 40px;
+  //padding-bottom: 40px;
+  background-color:#e2e2e2;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
+
+#topwelcome {
+    position:absolute;
+   top:0;
+   left:0;
+
+}
+
+.lab {
+   margin-left:35%;
+    
+}
+
+.labtest {
+   margin-left:40%;
+   
+    
+}
+
+input[type="radio"] ,label {
+    vertical-align: baseline;
+    padding: 5px;
+    margin: 5px;
+   // display:
+  // display:inline-block;
+    //width:21px;
+   //height:21px;
+    //margin-right:100px;
+ //   background:url(check_radio_sheet.png) left top no-repeat;
+}
+
+.myButton {
+	background-color:#44c767;
+	-moz-border-radius:30px;
+	-webkit-border-radius:30px;
+	border-radius:30px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}

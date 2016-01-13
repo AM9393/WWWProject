@@ -11,31 +11,55 @@
 <html>
     <head>
         
-           <script type="text/javascript">
+        <script type="text/javascript">
+            //Script gia na min mporei o xristis na patisei back.
     window.history.forward();
 
     function noBack() {
       window.history.forward();
     }
-  </script>
+        </script>
         
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="css/gamestarting.css" rel="stylesheet" type="text/css"/> 
         <title>JSP Game</title>
     </head>
     <body onload="noBack();" onpageshow="if (event.persisted) noBack();">
-        <h3>
-             <!-- Using Expression Language for Printing the Name of the User -->
-        <%= "Welcome" + " " + request.getAttribute("name")  %>
-        </h3>
+        <p id="topwelcome">
+          <!-- Using  Expression Language (EL) for Printing the Name of the User -->
+          Welcome  ${requestScope.name}
+          
+         </p>
+         <!-- First question -->
+         <%          session.setAttribute("jspquestion","1");      %>
+    <center>
         
+      
         
+         <h2>Question: 1/5 </h2>
         <h1>What does JSP stand for?</h1>
-        <p>Question: 1/5 </p>
+    </center>
+        
         <form name="choose" action="FormServlet.do" method="POST">
-            <input type="radio" name="Question1" value="Choice1"   >  Java Server Page   <br>
-            <input type="radio" name="Question1" value="Choice2" />     Java Servlet Page  <br>      
-            <input type="radio" name="Question1" value="Choice3" />    Java Service Pool  <br>
-           <input type="submit" value="submit" name="submit" />
+            <label class="lab" for="c1">
+            <input type="radio" name="Question1" value="Choice1" id="c1"/> Java Server Page  
+            </label>
+            <br>
+            <label class="lab" for="c2">
+            <input type="radio" name="Question1" value="Choice2" id="c2"/> Java Servlet Page 
+            </label>
+            <br>
+            <label class="lab" for="c2">
+            <input type="radio" name="Question1" value="Choice3" id="c3"/> Java Service Pool 
+            </label>
+            <br>
+            <br>
+            <center>
+           <input class="myButton" type="submit" value="submit" name="submit" />
+            </center>
         </form>
+        
+    
     </body>
 </html>

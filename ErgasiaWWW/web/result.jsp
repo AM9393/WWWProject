@@ -18,30 +18,63 @@
     }
   </script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+         <link href="css/gamestarting.css" rel="stylesheet" type="text/css"/> 
+        <title>JSP Game</title>
     </head>
     <body onload="noBack();" onpageshow="if (event.persisted) noBack();">
-        <h1>Which method of HttpServletResponse is used to redirect an HTTP request to another URL? </h1>
-        <p>Question 2/5 </p>
         
+         <% 
+            session.setAttribute("jspquestion","2");
+         %>
+        
+    <center>
+        <h2>Question 2/5 </h2>
+        <h1>Which method of HttpServletResponse is <br>
+           used to redirect an HTTP request to another URL? </h1>
+    </center>
+        
+   
            <form name="choose" action="FormServlet.do" method="POST">
-            <input type="radio" name="Question2" value="Choice1"   >  Ans1   <br>
-            <input type="radio" name="Question2" value="Choice2" />   Ans2  <br>      
-            <input type="radio" name="Question2" value="Choice3" />   Ans3  <br>
-           <input type="submit" value="submit" name="submit" />
+               
+               <label class="lab" for="r1">
+               <input id="r1"  type="radio" name="Question2" value="Choice1" /> sendURL()
+               </label>
+               <br>
+               <label class="lab" for="r2">
+               <input id="r2" type="radio" name="Question2" value="Choice2" /> redirectURL()
+               </label>
+               <br>    
+               <label class="lab" for="r3">
+             <input for="r3" type="radio" name="Question2" value="Choice3" /> sendRedirect()
+               </label>
+               <br>
+               
+               <br>
+               <center>  
+    
+               <input class="myButton"  type="submit" value="submit" name="submit" /> 
+               </center>
         </form>
-        
+            
         
 
 
-      <%= "Your score is " + " "  +  request.getAttribute("Score_String")     %>
+   
+   <center>
+       
         
-       <%-- <%=session.getAttribute("test") %> --%>
         
-       <% String score="";
+       <% 
+           PrintWriter writer=response.getWriter();
+           //Ama o xristis einai o admin deikse to score.
+          if (session.getAttribute("user").equals("admin")) {
+              writer.println("Score : " + session.getAttribute("test"));
+          }
+       String score="";
         request.setAttribute("score",request.getAttribute("Score_String"));
       %>
-      
+      </center>
 
     </body>
 </html>

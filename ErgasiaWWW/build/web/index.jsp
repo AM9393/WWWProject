@@ -10,23 +10,28 @@
 <!DOCTYPE html>
 <html>
     <head>
-     
-        
-        
+        <!-- Using Bootstrap for style -->
+        <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>  
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>      
+        <link href="css/index.css" rel="stylesheet" type="text/css"/> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>UTH Login Page</title>
     </head>
   <body>
         
-    <center>     <form  action="Game.do" method="POST" >
-  UTH Username:<br>
-  <input type="text" name="user">
-  <br>
- Password:<br>
- <input type="password" name="pass" /> <br>
-     <input type="submit" value="submit" name="submit" />
+  
+  <form class="form-signin" action="Game.do" method="POST" >
+  <center>   <h2 class="form-signin-heading">Uth Login </h2>     </center> 
+  <label for="inputUsername" class="sr-only">Username</label>
+  <input type="username" id="inputUsername" class="form-control" name="user" placeholder="UTH Username" required autofocus>
+  
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" name="pass" id="inputPassword" class="form-control" placeholder="Password" required autofocus> 
+  <input class="btn btn-lg btn-primary btn-block" type="reset" value="Clear" name="Clear" />
+  <input class="btn btn-lg btn-primary btn-block" type="submit" value="Sign in" name="submit" />
+        
 </form>
-    </center>
+  
    
          
     </body>
