@@ -1,7 +1,9 @@
 # WWWProject
-Final Project for CE426 Course (in progress)
+Final Project for CE426 Course (completed)
 <br>
-Μέσα στο build/web φαίνονται τα αρχεία jsp και τα java servlets που έχω κάνει αρχικά για το project
+Τα jsp φαινονται εδώ 
+https://github.com/AM9393/WWWProject/tree/master/ErgasiaWWW/build/web
 <br>
-Συγκεκριμένα τα java servlets 
-είναι εδώ  ->https://github.com/AM9393/WWWProject/tree/e09337681ce66d7af9e48576264e98f407a80ab3/ErgasiaWWW/src/java/com/model
+Τα java servlets καθώς και η java κλάση  φαίνονται εδώ :
+είναι εδώ  ->https://github.com/AM9393/WWWProject/tree/master/ErgasiaWWW/src/java/com/model
+
