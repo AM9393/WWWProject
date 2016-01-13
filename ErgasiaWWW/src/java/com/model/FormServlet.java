@@ -5,7 +5,15 @@
  */
 package com.model;
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+import com.uthldap.Uthldap;
+=======
+
+>>>>>>> parent of 5c799fb... 
+>>>>>>> origin/master
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -13,18 +21,33 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+<<<<<<< HEAD
 import javax.servlet.http.HttpSession;
+=======
+<<<<<<< HEAD
+import javax.servlet.http.HttpSession;
+=======
+>>>>>>> parent of 5c799fb... 
+>>>>>>> origin/master
 
 /**
  *
  * @author Themis
  */
 public class FormServlet extends HttpServlet {
+<<<<<<< HEAD
     private int score=0;
     private int help_score=0;
     private int question=0;
     private boolean flag=false;
    // private String Score_String;
+=======
+<<<<<<< HEAD
+    private int score=0;
+   // private String Score_String;
+=======
+>>>>>>> parent of 5c799fb... 
+>>>>>>> origin/master
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -78,6 +101,10 @@ public class FormServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
         
        String Score_String = "";
        String test="";
@@ -86,6 +113,7 @@ public class FormServlet extends HttpServlet {
        String choice3=request.getParameter("Question3");
        String choice4=request.getParameter("Question4");
        String choice5=request.getParameter("Question5");
+<<<<<<< HEAD
        
        
        
@@ -194,6 +222,65 @@ public class FormServlet extends HttpServlet {
               writer.println("Lathos arithmos question ooops!");   
               writer.println("Score" + score);
          }
+=======
+               
+               
+               
+       PrintWriter writer = response.getWriter();
+       HttpSession session=request.getSession(); //Start New Session
+       
+      //writer.println("Your choice is \n" + choice);
+    //  writer.println(choice);
+      if ("Choice1".equals(choice)) {        //An i epilogi einai i 1i apantisi (pou einai kai i swsti) afksise to score
+          
+           score++;    
+        // writer.println("Your score is  " + score);
+        request.setAttribute("Score_String", Integer.toString(score));
+       // session.setAttribute("test",Integer.toString(score));
+          RequestDispatcher view = request.getRequestDispatcher("result.jsp");
+           view.forward(request, response);      
+        
+   
+      }
+      else if("Choice3".equals(choice2)) { //An i epilogi einai i 1i apantisi (pou einai kai i swsti) afksise to score
+          score++;
+          request.setAttribute("Score_String", Integer.toString(score));
+          RequestDispatcher view = request.getRequestDispatcher("result2.jsp");
+          view.forward(request, response);         
+      }
+      
+      else {
+         request.setAttribute("Score_String",Integer.toString(score));
+           
+       writer.println("Wrong Choice");
+       writer.println("Your score is  "  + score);
+       
+          RequestDispatcher view = request.getRequestDispatcher("result.jsp");
+           view.forward(request, response);      
+        
+        
+      }
+        
+      
+
+=======
+     //   processRequest(request, response);
+        
+     
+       String choice= request.getParameter("submit");
+       PrintWriter writer = response.getWriter();
+         
+      //writer.println("Your choice is");
+       
+        
+    RequestDispatcher view = request.getRequestDispatcher("result.jsp");
+    view.forward(request, response);   
+        
+        
+>>>>>>> parent of 5c799fb... 
+     
+        
+>>>>>>> origin/master
         
     }
 

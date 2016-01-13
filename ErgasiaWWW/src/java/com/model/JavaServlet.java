@@ -6,13 +6,23 @@
 package com.model;
 
 import com.uthldap.Uthldap;
+<<<<<<< HEAD
 import java.io.*;
 import javax.servlet.http.Cookie;
+=======
+<<<<<<< HEAD
+import java.io.*;
+=======
+import java.io.IOException;
+import java.io.PrintWriter;
+>>>>>>> parent of 5c799fb... 
+>>>>>>> origin/master
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+<<<<<<< HEAD
 import javax.servlet.http.HttpSession;
 import java.sql.*;
 import java.text.DateFormat;
@@ -21,6 +31,12 @@ import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.Date;
+=======
+<<<<<<< HEAD
+import javax.servlet.http.HttpSession;
+=======
+>>>>>>> parent of 5c799fb... 
+>>>>>>> origin/master
 
 
 /**
@@ -29,6 +45,7 @@ import java.util.Date;
  */
 public class JavaServlet extends HttpServlet {
 
+<<<<<<< HEAD
     //Database credentials.Place real ones.
     private static final String DB ="jdbc:mysql://localhost:3306/dbhere";
     private static final String USER = "root";
@@ -37,6 +54,16 @@ public class JavaServlet extends HttpServlet {
     private final String adminID = "admin";   
     private final String password = "passhere";
     
+=======
+    
+<<<<<<< HEAD
+=======
+    
+    
+    
+    
+>>>>>>> parent of 5c799fb... 
+>>>>>>> origin/master
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -95,6 +122,7 @@ public class JavaServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+<<<<<<< HEAD
     
            Connection connection = null;
            Statement stmt = null;
@@ -285,6 +313,68 @@ public class JavaServlet extends HttpServlet {
 
       
        }  
+=======
+<<<<<<< HEAD
+        
+            String user = request.getParameter("user");
+            String pass = request.getParameter("pass");
+            String name=" ";
+                      
+            Uthldap ldap = new Uthldap(user,pass);
+            PrintWriter writer = response.getWriter();
+=======
+              
+
+        
+            String user = request.getParameter("user");
+            String pass = request.getParameter("pass");
+            String option=request.getParameter("submit");
+       
+            
+          Uthldap ldap = new Uthldap(user,pass);
+
+          PrintWriter writer = response.getWriter();
+>>>>>>> parent of 5c799fb... 
+         
+
+
+  
+//writer.println("Eimai sto Servlet");
+<<<<<<< HEAD
+if(ldap.auth()){
+
+    request.setAttribute("name", ldap.getName());
+   
+    writer.println("<html><body>Welcome <b>" + user + "</b><br></body></html>");
+    writer.println("<html><body>Authenticated Your name is: " + ldap.getName() +"<br></body></html>");
+            
+               RequestDispatcher view = request.getRequestDispatcher("GameStarting.jsp");
+               view.forward(request, response);
+        }
+
+else {
+     writer.println("<html><body>Authentication failed <br> Please Try Again! </body></html>");
+     writer.println("<html><body><a href=\"index.jsp\">Return</a></body></html>");
+   //  response.sendRedirect("index.jsp"); 
+=======
+if(ldap.auth()==true){
+            writer.println("<html><body>Welcome <b>" + user + "</b><br></body></html>");
+            writer.println("<html><body>Authenticated Your name is: " + ldap.getName() +"<br></body></html>");
+            
+             //  RequestDispatcher view = request.getRequestDispatcher("result.jsp");
+             //  view.forward(request, response);
+        }
+
+else {
+     writer.println("<html><body>Authentication failed</body></html>");
+>>>>>>> parent of 5c799fb... 
+}
+           
+      
+
+        
+    }
+>>>>>>> origin/master
 
     /**
      * Returns a short description of the servlet.
